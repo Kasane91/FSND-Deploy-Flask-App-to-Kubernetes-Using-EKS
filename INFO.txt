@@ -17,3 +17,7 @@ kubectl patch configmap/aws-auth -n kube-system --patch "$(cat sondr/AppData/Loc
 kubectl patch configmap/aws-auth -n kube-system --patch "$(cat sondr/AppData/Local/Temp/aws-auth-patch.yml)"
 
 kubectl get -n kube-system configmap/aws-auth -o yaml > %sondr%\AppData\Local\Temp\aws-auth-patch.yml
+
+
+979510225566
+TRUST="{ \"Version\": \"2012-10-17\", \"Statement\": [ { \"Effect\": \"Allow\",  \"Principal\": { \"AWS\": \"arn:aws:iam::${979510225566}:root\" }, \"Action\":  \"sts:AssumeRole\" } ] }"
